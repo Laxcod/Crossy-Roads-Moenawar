@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &399360797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+  m_PrefabInstance: {fileID: 3098996058657403641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53bdef25fa07a4409969268dbd35f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &426867732
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,13 +163,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65327eb7e6c54f41bcf43bace0b8826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grassPrefab: {fileID: 6918929367449096782, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-  roadPrefab: {fileID: 6683756440338864324, guid: 14e14cc5ec399c4469f0610b73156b77, type: 3}
+  duck: {fileID: 399360797}
+  terrainList:
+  - {fileID: 6918929367449096782, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
+  - {fileID: 6683756440338864324, guid: 14e14cc5ec399c4469f0610b73156b77, type: 3}
   InitialGrassCount: 5
   horizontalSize: 9
   backViewDistance: -4
-  forwardViewDistance: 15
+  forwardViewDistance: 10
   treeProbability: 0.5
+  travelDistance: 0
 --- !u!4 &426867734
 Transform:
   m_ObjectHideFlags: 0
@@ -279,6 +293,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -352,6 +367,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 36.3, y: -22.8, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a616d49abc5c64b9913099f3bd83c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
+  moveDuration: 0.2
 --- !u!1001 &3098996058657403641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -411,62 +440,57 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 963194229}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 426867733}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdatePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateTravelDistance
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DuckCamera, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098996060412907687, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
+      propertyPath: OnJumpEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122f0f557c2cc774cb83bb8e8875b158, type: 3}
---- !u!1001 &6918929368415386104
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6918929367449096781, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_Name
-      value: Grass
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6918929367449096783, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
