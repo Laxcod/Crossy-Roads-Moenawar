@@ -42,6 +42,8 @@ public class PlayManager : MonoBehaviour
           
           SpawnRandomTerrain(zPos);
         }
+
+         OnUpdateTerrainLimit.Invoke(horizontalSize,travelDistance + backViewDistance);
     }
 
     private Terrain SpawnRandomTerrain(int zPos)
@@ -51,15 +53,13 @@ public class PlayManager : MonoBehaviour
       for (int z = -1; z >= -3; z--)
       {
         var checkPos = zPos + z;
-        System.Type comparatorType = comparatorTerrain.GetType();
-        System.Type checkType = activeTerrainDict[checkPos].GetType();
 
         if(comparatorTerrain == null)
         {
           comparatorTerrain = activeTerrainDict[checkPos];
           continue;
         }
-        else if(comparatorType != checkType)
+        else if(comparatorTerrain.GetType() != activeTerrainDict[checkPos].GetType())
         {
            randomIndex = Random.Range(0, terrainList.Count);
            return SpawnTerrain(terrainList[randomIndex], zPos);
@@ -74,9 +74,7 @@ public class PlayManager : MonoBehaviour
      
       for (int i = 0; i < candidateTerrain.Count; i++)
       {
-        System.Type comparatorType = comparatorTerrain.GetType();
-        System.Type checkType = candidateTerrain[i].GetType();
-        if(comparatorType == checkType)
+        if(comparatorTerrain.GetType() == candidateTerrain[i].GetType())
           {
             candidateTerrain.Remove(candidateTerrain[i]);
             break;

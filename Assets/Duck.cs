@@ -11,9 +11,14 @@ public class Duck : MonoBehaviour
     [Range(0,1)]
      float moveDuration = 0.1f;
 
+
     [SerializeField] 
     [Range(0,1)] 
     float jumpHeight =0.5f;
+
+    [SerializeField] int leftMoveLimit;
+    [SerializeField] int rightMoveLimit;
+    [SerializeField] int backMoveLimit;
     
     public UnityEvent<Vector3> OnJumpEnd;
 
@@ -52,11 +57,14 @@ public class Duck : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-      
+      var targetPosition = transform.position + direction;
+
+      if(targetPosition.x < leftMoveLimit || targetPosition.x > rightMoveLimit || targetPosition.z < backMoveLimit)
+        targetPosition = transform.position;
         
         transform
             .DOJump(
-            transform.position + direction, 
+            targetPosition, 
             jumpHeight,
             1, 
             moveDuration)
@@ -65,6 +73,13 @@ public class Duck : MonoBehaviour
         transform.forward = direction;
 
 
+    }
+
+    public void UpdateMoveLimit(int horizontalSize, int backLimit)
+    {
+        leftMoveLimit = -horizontalSize/2;
+        rightMoveLimit = horizontalSize/2;
+        backMoveLimit = backLimit;
     }
 
     private void BroadCsatPositionOnJumpEnd()
