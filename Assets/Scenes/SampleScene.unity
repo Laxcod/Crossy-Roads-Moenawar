@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65327eb7e6c54f41bcf43bace0b8826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duck: {fileID: 399360797}
   terrainList:
   - {fileID: 6918929367449096782, guid: 245e95c86af941a48a95131bf37f2ec0, type: 3}
   - {fileID: 6683756440338864324, guid: 14e14cc5ec399c4469f0610b73156b77, type: 3}
@@ -171,8 +170,22 @@ MonoBehaviour:
   horizontalSize: 9
   backViewDistance: -4
   forwardViewDistance: 10
-  treeProbability: 0.5
   travelDistance: 0
+  OnUpdateTerrainLimit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 399360797}
+        m_TargetAssemblyTypeName: Duck, Assembly-CSharp
+        m_MethodName: UpdateMoveLimit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &426867734
 Transform:
   m_ObjectHideFlags: 0

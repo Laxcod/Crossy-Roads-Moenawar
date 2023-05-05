@@ -59,19 +59,23 @@ public class Duck : MonoBehaviour
     {
       var targetPosition = transform.position + direction;
 
-      if(targetPosition.x < leftMoveLimit || targetPosition.x > rightMoveLimit || targetPosition.z < backMoveLimit)
+    // check apakah target posisi valid
+      if(targetPosition.x < leftMoveLimit || 
+         targetPosition.x > rightMoveLimit || 
+         targetPosition.z < backMoveLimit ||
+         Tree.AllPositions.Contains(targetPosition))
+     { 
         targetPosition = transform.position;
-        
+     }  
         transform
             .DOJump(
             targetPosition, 
             jumpHeight,
             1, 
             moveDuration)
-            .onComplete = BroadCsatPositionOnJumpEnd;
+            .onComplete = BroadCastPositionOnJumpEnd;
 
         transform.forward = direction;
-
 
     }
 
@@ -82,7 +86,7 @@ public class Duck : MonoBehaviour
         backMoveLimit = backLimit;
     }
 
-    private void BroadCsatPositionOnJumpEnd()
+    private void BroadCastPositionOnJumpEnd()
     {
        OnJumpEnd.Invoke(transform.position);
     }

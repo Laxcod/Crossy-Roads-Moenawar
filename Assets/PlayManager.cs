@@ -5,13 +5,11 @@ using UnityEngine.Events;
 
 public class PlayManager : MonoBehaviour
 {
-    [SerializeField] Duck duck;
     [SerializeField] List<Terrain> terrainList ;
     [SerializeField] int InitialGrassCount = 5; 
     [SerializeField] int horizontalSize;
     [SerializeField] int backViewDistance = -4;
     [SerializeField] int forwardViewDistance = 15;
-    [SerializeField, Range(0,1)] float treeProbability;
 
     Dictionary<int, Terrain> activeTerrainDict = new Dictionary<int, Terrain>(20);
     [SerializeField] private int travelDistance;
