@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Car : MonoBehaviour
 {
-    [SerializeField, Range(0, 5)] float speed = 1;
+    [SerializeField, Range(0, 10)] float speed = 1;
 
     Vector3 initialPosition;
 

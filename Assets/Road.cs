@@ -26,7 +26,7 @@ public class Road : Terrain
         else
         {
             carSpawnPosition = new Vector3(
-                -horizontalSize/2 + 3,
+                -(horizontalSize/2 + 3),
                 0,
                 this.transform.position.z);
 

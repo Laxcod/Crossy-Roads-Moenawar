@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 735870810729727271}
   - component: {fileID: 735870810729727270}
   - component: {fileID: 735870810729727269}
-  - component: {fileID: 735870810729727268}
   m_Layer: 0
   m_Name: Aphalt
   m_TagString: Untagged
@@ -87,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &735870810729727268
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735870810729727291}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &735870811085567760
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +97,6 @@ GameObject:
   - component: {fileID: 735870811085567761}
   - component: {fileID: 735870811085567772}
   - component: {fileID: 735870811085567763}
-  - component: {fileID: 735870811085567762}
   m_Layer: 0
   m_Name: Stripes
   m_TagString: Untagged
@@ -184,19 +169,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &735870811085567762
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735870811085567760}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &735870811454210091
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +180,6 @@ GameObject:
   - component: {fileID: 735870811454210068}
   - component: {fileID: 735870811454210071}
   - component: {fileID: 735870811454210070}
-  - component: {fileID: 735870811454210069}
   m_Layer: 0
   m_Name: Stripes
   m_TagString: Untagged
@@ -281,19 +252,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &735870811454210069
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735870811454210091}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &735870811881066191
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +295,6 @@ GameObject:
   - component: {fileID: 735870812533186167}
   - component: {fileID: 735870812533186162}
   - component: {fileID: 735870812533186161}
-  - component: {fileID: 735870812533186160}
   m_Layer: 0
   m_Name: Stripes
   m_TagString: Untagged
@@ -410,16 +367,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &735870812533186160
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735870812533186166}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
