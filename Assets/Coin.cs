@@ -14,11 +14,12 @@ public class Coin : MonoBehaviour
     public void Collected()
     {
         GetComponent<Collider>().enabled = false;
+        rotationSpeed *= 10;
         this.transform.DOJump(
             this.transform.position,
-            2,
+            1.5f,
             1,
-            1f     
+            0.4f     
         ).onComplete = SelfDestruct;
     }
 

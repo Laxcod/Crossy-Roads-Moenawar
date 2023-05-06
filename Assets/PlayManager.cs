@@ -96,7 +96,7 @@ public class PlayManager : MonoBehaviour
            return terrain;
     }
 
-    public Coin SpawnCoin(int horizontalSize, int zPos, float probability = 1)
+    public Coin SpawnCoin(int horizontalSize, int zPos, float probability = 0.2f)
     {
         if (probability == 0)
             return null;
