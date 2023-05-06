@@ -21,7 +21,10 @@ public class Duck : MonoBehaviour
     [SerializeField] int backMoveLimit;
     
     public UnityEvent<Vector3> OnJumpEnd;
+    public UnityEvent<int> OnGetCoin;
+
     private bool isDie = false;
+
 
     void Update()
     {
@@ -97,10 +100,19 @@ public class Duck : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
+        if(other.CompareTag("Car"))
+        {
         if(isDie == true)
             return;
+
         transform.DOScaleY(0.1f,0.2f);
         
         isDie = true;
+        }
+
+        else if (other.CompareTag("Coin"))
+        {
+            OnGetCoin.Invoke(1);
+        }
     }
 }
