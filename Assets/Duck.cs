@@ -87,6 +87,11 @@ public class Duck : MonoBehaviour
 
     }
 
+    public void SetMoveable(bool value)
+    {
+        isMoveable = value;
+    }
+
     public void UpdateMoveLimit(int horizontalSize, int backLimit)
     {
         leftMoveLimit = -horizontalSize/2;
