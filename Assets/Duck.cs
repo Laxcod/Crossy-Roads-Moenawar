@@ -118,7 +118,6 @@ public class Duck : MonoBehaviour
 
         else if (other.CompareTag("Coin"))
         {
-            Debug.Log("CoinEnter");
             var coin = other.GetComponent<Coin>();
             OnGetCoin.Invoke(coin.Value);
             coin.Collected();
