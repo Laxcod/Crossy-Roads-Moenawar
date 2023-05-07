@@ -29,7 +29,7 @@ public class Duck : MonoBehaviour
 
     void Update()
     {
-        if(isMoveable)
+        if(isMoveable == false)
           return;
 
         if(DOTween.IsTweening(transform))
@@ -108,12 +108,11 @@ public class Duck : MonoBehaviour
     {
         if(other.CompareTag("Car"))
         {
-        if(isMoveable == true)
-            return;
-
-        transform.DOScaleY(0.1f,0.2f);
+            if(transform.localScale.y == 0.1f)
+                return;
+            transform.DOScale(new Vector3(2,0.1f,2),0.2f);
         
-            isMoveable = true;
+            isMoveable = false;
             Invoke("Die", 3);
         }
 
